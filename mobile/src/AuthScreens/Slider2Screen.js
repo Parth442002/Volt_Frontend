@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     height:70,
     width:70,
     borderRadius:70,
-    backgroundColor:'green',
+    backgroundColor:'#FF8C32',
   },
   prevarrow:{
     alignItems:'center',
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     height:70,
     width:70,
     borderRadius:70,
-    backgroundColor:'green',
+    backgroundColor:'#FF8C32',
   }
 
 })

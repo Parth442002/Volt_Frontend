@@ -7,7 +7,7 @@ import HomeTabNavigator from './HomeTabNavigator'
 
 const Stack = createNativeStackNavigator();
 
-function RootNavigator() {
+function ProfileNavigator() {
   return (
       <Stack.Navigator
         initialRouteName='SplashScreen'
@@ -31,18 +31,4 @@ function RootNavigator() {
   );
 }
 
-export default RootNavigator
-
-
-/*
-<Stack.Screen
-            name="AuthStack"
-            component={AuthStack}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="MainStack"
-            component={HomeScreen}
-            options={{headerShown: false}}
-          />
-*/
+export default ProfileNavigProfile

@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
     marginTop:20,
-    backgroundColor:'green',
+    backgroundColor:'#FF8C32',
     paddingVertical:10,
     paddingHorizontal:20,
     borderRadius:10,
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   main:{
     flexDirection:'row',
     justifyContent:'center',
-    backgroundColor:'green',
+    backgroundColor:'#FF8C32',
   },
   title:{
     fontSize:25,

@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     height:70,
     width:70,
     borderRadius:70,
-    backgroundColor:'green',
+    backgroundColor:'#FF8C32',
   },
   button:{
     position:'relative',
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     padding:20,
     borderRadius:15,
     fontSize:20,
-    backgroundColor:'green',
+    backgroundColor:'#FF8C32',
   },
   buttontext:{
     fontSize:20,

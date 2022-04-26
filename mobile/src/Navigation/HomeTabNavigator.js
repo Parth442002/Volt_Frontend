@@ -24,7 +24,7 @@ const LightningButton=({children,onPress})=>{
       onPress={onPress}
     >
       <View
-      style={{width:70,height:70,borderRadius:35,backgroundColor:'#e32f45'}}
+      style={{width:70,height:70,borderRadius:35,backgroundColor:'#FF8C32'}}
       >
         {children}
       </View>
@@ -62,13 +62,13 @@ function HomeTabNavigator() {
                   style={{
                   width:25,
                   height:25,
-                  color:focused? '#e32f45':'#748c94'
+                  color:focused? '#FF8C32':'#748c94'
                 }}
                 />
                 <Text
                   style={{
                     fontSize:15,marginTop:5,
-                    color:focused? '#e32f45':'#748c94'
+                    color:focused? '#FF8C32':'#748c94'
                   }}
                 >Home</Text>
               </View>
@@ -85,13 +85,13 @@ function HomeTabNavigator() {
                   style={{
                   width:25,
                   height:25,
-                  color:focused? '#e32f45':'#748c94'
+                  color:focused? '#FF8C32':'#748c94'
                 }}
                 />
                 <Text
                   style={{
                     fontSize:15,marginTop:5,
-                    color:focused? '#e32f45':'#748c94'
+                    color:focused? '#FF8C32':'#748c94'
                   }}
                 >Discover</Text>
               </View>
@@ -134,13 +134,13 @@ function HomeTabNavigator() {
                   style={{
                   width:25,
                   height:25,
-                  color:focused? '#e32f45':'#748c94'
+                  color:focused? '#FF8C32':'#748c94'
                 }}
                 />
                 <Text
                   style={{
                     fontSize:15,marginTop:5,
-                    color:focused? '#e32f45':'#748c94'
+                    color:focused? '#FF8C32':'#748c94'
                   }}
                 >Liked</Text>
               </View>
@@ -158,13 +158,13 @@ function HomeTabNavigator() {
                   style={{
                   width:25,
                   height:25,
-                  color:focused? '#e32f45':'#748c94'
+                  color:focused? '#FF8C32':'#748c94'
                 }}
                 />
                 <Text
                   style={{
                     fontSize:15,marginTop:5,
-                    color:focused? '#e32f45':'#748c94'
+                    color:focused? '#FF8C32':'#748c94'
                   }}
                 >Profile</Text>
               </View>
@@ -197,7 +197,7 @@ export default HomeTabNavigator
               style={{
                 width:25,
                 height:25,
-                tintColor:focused? '#e32f45':'#748c94'
+                tintColor:focused? '#FF8C32':'#748c94'
               }}
               />
               <Text style={{fontSize:15,marginTop:5}}>Home</Text>

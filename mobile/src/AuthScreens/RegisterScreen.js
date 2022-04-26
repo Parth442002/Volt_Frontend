@@ -48,9 +48,9 @@ const RegisterScreen = ({navigation}) => {
               label={<InputLabel name='Email'/>}
               mode={'outlined'}
               left={<TextInput.Icon name="email" />}
-              selectionColor="blacksf"
-              underlineColor="green"
-              outlineColor="green"
+
+              underlineColor="#FF8C32"
+              outlineColor="#FF8C32"
               activeOutlineColor='blue'
               keyboardType="email-address"
             />
@@ -59,7 +59,7 @@ const RegisterScreen = ({navigation}) => {
               label={<InputLabel name='Phone'/>}
               mode={'outlined'}
               left={<TextInput.Icon name="phone" />}
-              outlineColor="green"
+              outlineColor="#FF8C32"
               activeOutlineColor='blue'
               keyboardType="number-pad"
             />
@@ -68,7 +68,7 @@ const RegisterScreen = ({navigation}) => {
               label={<InputLabel name='Password'/>}
               mode={'outlined'}
               secureTextEntry={passwordvisible}
-              outlineColor="green"
+              outlineColor="#FF8C32"
               activeOutlineColor='blue'
               keyboardType="visible-password"
               left={<TextInput.Icon name="lock"/>}
