@@ -1,15 +1,25 @@
-import { StyleSheet, Text, View,TouchableOpacity,Image} from 'react-native'
-import React from 'react'
+import { StyleSheet, View,TouchableOpacity,Image} from 'react-native'
+import React,{useState} from 'react'
 
 import { AntDesign } from '@expo/vector-icons';
-import { Avatar } from 'react-native-paper';
+import { Avatar, Modal,Portal,Text } from 'react-native-paper';
 import AnimatedLottieView from 'lottie-react-native';
 
 
 import AuthButton from '../Components/AuthButton'
 
+const LogoutModal=()=>{
+  return(
+    <Portal.Host>
+      <Text>Content of the app</Text>
+    </Portal.Host>
+  )
+}
+
 
 const ProfileScreen = ({navigation}) => {
+  const [modalVisible, setModalVisible] = useState(false);
+
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.backbutton}>
@@ -41,7 +51,7 @@ const ProfileScreen = ({navigation}) => {
                     width:'50%',
                     minWidth:'50%'
                   }}
-            //onPress={()=>console.log('shit')}
+            onPress={setModalVisible(true)}
             >
             <Text
             style={{fontSize:15,color:'white',textAlign:'center'}}
@@ -49,7 +59,6 @@ const ProfileScreen = ({navigation}) => {
           </TouchableOpacity>
         </View>
       </View>
-
       <View style={styles.metadata}>
         <View style={styles.metaset}>
           <AntDesign name='amazon' size={30} style={{color:'#FF8C32',}}/>
@@ -95,7 +104,6 @@ const ProfileScreen = ({navigation}) => {
           <Text style={{fontSize:15}}>Click Me</Text>
         </TouchableOpacity>
       </View>
-
     </View>
   )
 }
@@ -179,9 +187,12 @@ const styles = StyleSheet.create({
   cars:{
     marginTop:20,
     flexDirection:'row',
-    alignContent:'center',
-    alignItems:'center',
-    justifyContent:'center'
+    alignContent:'flex-start',
+    justifyContent:'center',
+    backgroundColor:'white',
+    borderRadius:20,
+    width:'75%',
+    alignItems:'flex-start'
   },
   carsicon:{
     margin:10,
@@ -205,18 +216,20 @@ const styles = StyleSheet.create({
     alignSelf:'center',
     borderRadius:5,
     backgroundColor:'white',
-    padding:0,
+    padding:-5,
     borderColor:'black',
     shadowColor:'red',
+    marginBottom:20,
   },
   bottombutton:{
+    borderRadius:10,
     textAlign:'center',
-    marginVertical:2,
+    marginVertical:4,
     paddingHorizontal:60,
     paddingVertical:10,
     backgroundColor:'white',
     borderColor:'black',
-    borderWidth:1,
+    borderWidth:2,
     fontSize:15,
   }
 })
