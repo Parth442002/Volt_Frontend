@@ -1,14 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from "react-native";
 
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer } from "@react-navigation/native";
 
-import RootNavigator from './src/Navigation/RootNavigator'
-
+import RootNavigator from "./src/Navigation/RootNavigator";
 
 export default function App() {
   return (
     <NavigationContainer>
-      <RootNavigator/>
+      <RootNavigator />
     </NavigationContainer>
   );
 }

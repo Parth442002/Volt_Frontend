@@ -7,14 +7,13 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "lint": "prettier --check .",
+    "format": "prettier --write ."
   },
-  "husky":{
-    "hooks":{
-      "applypatch-msg": "echo \"[Husky] applypatch-msg\"",
-      "pre-applypatch": "echo \"[Husky] pre-applypatch\"",
-      "post-applypatch": "echo \"[Husky] post-applypatch\"",
-      "pre-commit": "echo \"[Husky] pre-commit\""
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format"
     }
   },
   "dependencies": {
