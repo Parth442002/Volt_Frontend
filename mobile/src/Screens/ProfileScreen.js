@@ -8,14 +8,6 @@ import AnimatedLottieView from 'lottie-react-native';
 
 import AuthButton from '../Components/AuthButton'
 
-const LogoutModal=()=>{
-  return(
-    <Portal.Host>
-      <Text>Content of the app</Text>
-    </Portal.Host>
-  )
-}
-
 
 const ProfileScreen = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
