@@ -8,12 +8,13 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
+
     "lint": "prettier --check .",
     "format": "prettier --write ."
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn format && git add ."
+      "pre-commit": "yarn lint && yarn format && git add ."
     }
   },
   "dependencies": {
