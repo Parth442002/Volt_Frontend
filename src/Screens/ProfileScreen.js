@@ -1,15 +1,12 @@
-import { StyleSheet, View, TouchableOpacity, Image } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Image,Pressable } from "react-native";
 import React, { useState } from "react";
 
 import { AntDesign } from "@expo/vector-icons";
-import { Avatar, Modal, Portal, Text } from "react-native-paper";
-import AnimatedLottieView from "lottie-react-native";
+import { Avatar, Text } from "react-native-paper";
 
-import AuthButton from "../Components/AuthButton";
+
 
 const ProfileScreen = ({ navigation }) => {
-  const [modalVisible, setModalVisible] = useState(false);
-
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.backbutton}>
@@ -41,7 +38,7 @@ const ProfileScreen = ({ navigation }) => {
               width: "50%",
               minWidth: "50%",
             }}
-            onPress={setModalVisible(true)}
+            onPress={console.log("Logout")}
           >
             <Text style={{ fontSize: 15, color: "white", textAlign: "center" }}>
               Logout
@@ -81,16 +78,13 @@ const ProfileScreen = ({ navigation }) => {
       </View>
       <View style={styles.bottombuttongrp}>
         <TouchableOpacity style={styles.bottombutton}>
-          <Text style={{ fontSize: 15 }}>Click Me</Text>
+          <Text style={{ fontSize: 15 }}>Manage Wallet</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.bottombutton}>
-          <Text style={{ fontSize: 15 }}>Click Me</Text>
+          <Text style={{ fontSize: 15 }}>Manage Garage</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.bottombutton}>
-          <Text style={{ fontSize: 15 }}>Click Me</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.bottombutton}>
-          <Text style={{ fontSize: 15 }}>Click Me</Text>
+          <Text style={{ fontSize: 15 }}>Charging Sessions</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -124,7 +118,7 @@ const styles = StyleSheet.create({
     width: "90%",
     height: "20%",
     backgroundColor: "#EDE6DB",
-    paddingVertical: 10,
+    paddingVertical: 5,
     paddingHorizontal: 30,
     marginHorizontal: 30,
     borderRadius: 40,
@@ -199,13 +193,12 @@ const styles = StyleSheet.create({
     color: "gray",
   },
   bottombuttongrp: {
-    marginTop: 10,
+    marginTop: 20,
     width: "50%",
     alignItems: "center",
     alignSelf: "center",
     borderRadius: 5,
-    backgroundColor: "white",
-    padding: -5,
+    padding: 0,
     borderColor: "black",
     shadowColor: "red",
     marginBottom: 20,
@@ -213,12 +206,14 @@ const styles = StyleSheet.create({
   bottombutton: {
     borderRadius: 10,
     textAlign: "center",
+    alignItems:'center',
     marginVertical: 4,
-    paddingHorizontal: 60,
+    paddingHorizontal: 20,
     paddingVertical: 10,
     backgroundColor: "white",
     borderColor: "black",
     borderWidth: 2,
     fontSize: 15,
+    width:"100%",
   },
 });
