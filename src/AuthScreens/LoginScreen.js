@@ -13,11 +13,39 @@ import { AntDesign } from "@expo/vector-icons";
 
 import AuthButton from "../Components/AuthButton";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+import {UserSignIn} from "../services/user.services"
+
 
 const LoginScreen = ({ navigation }) => {
-  const [text, setText] = useState("");
+  const [email,setEmail]=useState()
+  const [password,setPassword]=useState()
   const [passwordvisible, setPasswordvisible] = useState(false);
 
+  const onSubmit=async()=>{
+    const postData={
+        email:email,
+        password:password,
+    }
+    console.log(postData)
+    console.log("Posted the Data")
+    try {
+        const response = await UserSignIn(postData);
+        console.log(response.data);
+        const accessToken=await response.data.access_token
+        const refreshToken=await response.data.refresh_token
+        console.log(accessToken)
+        console.log(refreshToken)
+        await AsyncStorage.setItem("accessToken",accessToken)
+        await AsyncStorage.setItem("refreshToken",refreshToken)
+        navigation.navigate("SuccessScreen")
+      } catch (err) {
+        console.log("ERROR");
+        console.log(err)
+        navigation.navigate("ErrorScreen")
+      }
+    }
   const InputLabel = (props) => {
     return <Text style={{ fontSize: 20 }}>{props.name}</Text>;
   };
@@ -39,12 +67,16 @@ const LoginScreen = ({ navigation }) => {
         </Text>
         <View style={styles.form}>
           <TextInput
+            value={email}
+            onChangeText={(value)=>setEmail(value)}
             style={styles.input}
             label={<InputLabel name="Email" />}
             mode={"outlined"}
             left={<TextInput.Icon name="email" />}
           />
           <TextInput
+            value={password}
+            onChangeText={(value)=>setPassword(value)}
             style={styles.input}
             label={<InputLabel name="Password" />}
             mode={"outlined"}
@@ -67,7 +99,7 @@ const LoginScreen = ({ navigation }) => {
           </View>
           <AuthButton
             title="Login"
-            onPress={() => navigation.navigate("Slider3Screen")}
+            onPress={() => onSubmit()}
           />
         </View>
       </KeyboardAwareScrollView>

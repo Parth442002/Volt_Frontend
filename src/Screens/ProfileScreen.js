@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 import { AntDesign } from "@expo/vector-icons";
 import { Avatar, Text } from "react-native-paper";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 
@@ -38,7 +39,12 @@ const ProfileScreen = ({ navigation }) => {
               width: "50%",
               minWidth: "50%",
             }}
-            onPress={console.log("Logout")}
+            onPress={
+              ()=>{
+                AsyncStorage.removeItem("accessToken")
+                navigation.navigate("SplashScreen")
+              }
+            }
           >
             <Text style={{ fontSize: 15, color: "white", textAlign: "center" }}>
               Logout
