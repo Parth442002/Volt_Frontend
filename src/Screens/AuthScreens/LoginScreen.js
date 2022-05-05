@@ -7,15 +7,13 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import AnimatedLottieView from "lottie-react-native";
-
 import { Button, TextInput } from "react-native-paper";
 import { AntDesign } from "@expo/vector-icons";
-
-import AuthButton from "../Components/AuthButton";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import {UserSignIn} from "../services/user.services"
+import {UserSignIn} from "../../services/user.services"
+import AuthButton from "../../Components/AuthButton";
 
 
 const LoginScreen = ({ navigation }) => {
@@ -60,7 +58,7 @@ const LoginScreen = ({ navigation }) => {
           style={styles.animatedTop}
           autoPlay
           loop={true}
-          source={require(`../../assets/lottieFiles/Logo.json`)}
+          source={require(`../../../assets/lottieFiles/Logo.json`)}
         />
         <Text style={styles.heading}>
           Welcome Back! We are {"\n"}Delighted to have you here

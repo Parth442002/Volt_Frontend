@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SplashScreen from "../Screens/SplashScreen";
 import AuthNavigator from "./AuthNavigator";
 import HomeTabNavigator from "./HomeTabNavigator";
+import CarSetUpNavigator from "./CarSetUpNavigator";
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,11 @@ function RootNavigator() {
         options={{ headerShown: false }}
       />
       <Stack.Screen
+        name="CarSetUpNavigator"
+        component={CarSetUpNavigator}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
         name="HomeNavigator"
         component={HomeTabNavigator}
         options={{ headerShown: false }}
@@ -29,16 +35,3 @@ function RootNavigator() {
 }
 
 export default RootNavigator;
-
-/*
-<Stack.Screen
-            name="AuthStack"
-            component={AuthStack}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="MainStack"
-            component={HomeScreen}
-            options={{headerShown: false}}
-          />
-*/

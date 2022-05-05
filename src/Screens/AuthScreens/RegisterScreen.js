@@ -11,10 +11,10 @@ import AnimatedLottieView from "lottie-react-native";
 import { Button, TextInput } from "react-native-paper";
 import { AntDesign } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import AuthButton from "../Components/AuthButton";
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import {UserSignUp} from "../services/user.services"
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import {UserSignUp} from "../../services/user.services"
+import AuthButton from "../../Components/AuthButton";
 
 
 
@@ -65,7 +65,7 @@ const RegisterScreen = ({ navigation }) => {
           style={styles.animatedTop}
           autoPlay
           loop={true}
-          source={require(`../../assets/lottieFiles/Logo.json`)}
+          source={require(`../../../assets/lottieFiles/Logo.json`)}
         />
         <Text style={styles.heading}>
           Welcome! We are {"\n"}Delighted to have you here

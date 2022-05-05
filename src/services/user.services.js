@@ -10,3 +10,7 @@ export async function UserSignIn(body){
   const response=await Api.post(`/auth/login/`,body)
   return response;
 }
+
+export async function UserDetails(){
+  const response=await Api.get(``)
+}

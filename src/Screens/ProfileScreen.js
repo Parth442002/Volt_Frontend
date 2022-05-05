@@ -1,5 +1,5 @@
 import { StyleSheet, View, TouchableOpacity, Image,Pressable } from "react-native";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 
 import { AntDesign } from "@expo/vector-icons";
 import { Avatar, Text } from "react-native-paper";
@@ -8,6 +8,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 const ProfileScreen = ({ navigation }) => {
+  useEffect(() => {console.log("Profile Screen")}, []);
+
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.backbutton}>

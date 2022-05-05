@@ -1,32 +1,25 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import AnimatedLottieView from "lottie-react-native";
-
 import { FontAwesome5 } from "@expo/vector-icons";
-const Slider2Screen = ({ navigation }) => {
+
+const Slider1Screen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <AnimatedLottieView
         style={styles.animatedTop}
         autoPlay
         loop={true}
-        source={require(`../../assets/lottieFiles/slide2.json`)}
+        source={require(`../../../assets/lottieFiles/slide1.json`)}
       />
-      <Text style={styles.heading}>Slider2Screen</Text>
+      <Text style={styles.heading}>Slider1Screen</Text>
       <Text style={styles.text}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor {"\n"} incididunt ut labore et
       </Text>
       <TouchableOpacity
-        style={styles.prevarrow}
-        onPress={() => navigation.navigate("Slider1Screen")}
-      >
-        <FontAwesome5 name="arrow-left" size={50} color="white" />
-      </TouchableOpacity>
-
-      <TouchableOpacity
         style={styles.nextarrow}
-        onPress={() => navigation.navigate("Slider3Screen")}
+        onPress={() => navigation.navigate("Slider2Screen")}
       >
         <FontAwesome5 name="arrow-right" size={50} color="white" />
       </TouchableOpacity>
@@ -34,7 +27,7 @@ const Slider2Screen = ({ navigation }) => {
   );
 };
 
-export default Slider2Screen;
+export default Slider1Screen;
 
 const styles = StyleSheet.create({
   container: {
@@ -44,7 +37,7 @@ const styles = StyleSheet.create({
   },
   animatedTop: {
     position: "absolute",
-    top: 10,
+    top: 0,
     height: 250,
     width: 250,
   },
@@ -63,17 +56,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     position: "absolute",
     right: 20,
-    bottom: 20,
-    height: 70,
-    width: 70,
-    borderRadius: 70,
-    backgroundColor: "#FF8C32",
-  },
-  prevarrow: {
-    alignItems: "center",
-    justifyContent: "center",
-    position: "absolute",
-    left: 20,
     bottom: 20,
     height: 70,
     width: 70,

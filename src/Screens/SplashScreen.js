@@ -17,10 +17,9 @@ const SplashScreen = ({ navigation }) => {
 
       AsyncStorage.getItem('accessToken').then((value) =>
       navigation.replace(
-          value === null ? 'AuthStack' : 'MainStack'
+          value === null ? 'CarSetUpNavigator' : 'CarSetUpNavigator'
         ),
        );
-      navigation.replace("AuthStack");
     }, 1000);
   }, []);
 

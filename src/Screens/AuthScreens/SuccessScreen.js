@@ -4,10 +4,10 @@ import React, { useEffect } from "react";
 import AnimatedLottieView from "lottie-react-native";
 import { Entypo } from "@expo/vector-icons";
 
-const ErrorScreen = ({ navigation }) => {
+const SuccessScreen = ({ navigation }) => {
   useEffect(() => {
     setTimeout(() => {
-      navigation.goBack();
+      navigation.navigate("HomeNavigator", { screen: "Home" });
     }, 3000);
   }, []);
   return (
@@ -18,26 +18,29 @@ const ErrorScreen = ({ navigation }) => {
       >
         <Entypo name="cross" size={50} color="black" />
       </TouchableOpacity>
-      <View style={{ height: "75%", width: "75%" }}>
-        <AnimatedLottieView
-          style={styles.error}
-          autoPlay
-          loop
-          source={require(`../../assets/lottieFiles/error.json`)}
-        />
-      </View>
+      <AnimatedLottieView
+        style={styles.confetti}
+        autoPlay
+        loop
+        source={require(`../../../assets/lottieFiles/confetti.json`)}
+      />
+      <AnimatedLottieView
+        autoPlay
+        loop
+        source={require(`../../../assets/lottieFiles/success.json`)}
+      />
       <>
         <Text
           style={[{ paddingHorizontal: 30, paddingBottom: 20 }, styles.heading]}
         >
-          There has been an error :(
+          You Signed Up Successfully !
         </Text>
       </>
     </View>
   );
 };
 
-export default ErrorScreen;
+export default SuccessScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -49,6 +52,10 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 30,
     left: 5,
+  },
+  confetti: {
+    height: "100%",
+    width: "100%",
   },
   heading: {
     position: "absolute",
